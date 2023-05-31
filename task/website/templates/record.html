@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+  <div class="card-header"><strong>
+    	{{ customer_record.first_name }} 
+		{{ customer_record.last_name }}</strong>
+  </div>
+  <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Name: </strong>{{ customer_record.name }}</p>
+
+<p class="card-text">
+<strong>Quantity_in_stock: </strong>{{ customer_record.Quantity_in_stock }}
+</p>
+
+<p class="card-text">
+<strong>Cost_per_item: </strong>{{ customer_record.Cost_per_item }}</p>
+
+<p class="card-text">
+<strong>Sales_made: </strong>{{ customer_record.Sales_made }}</p>
+
+<p class="card-text">
+<strong>Warehouse: </strong>{{ customer_record.Warehouse }}</p>
+
+<p class="card-text">
+<strong>city: </strong>{{ customer_record.city }}</p>
+
+<p class="card-text">
+<strong>state: </strong>{{ customer_record.state }}</p>
+
+<p class="card-text">
+<strong>zipcode: </strong>{{ customer_record.zipcode }}</p>
+
+<p class="card-text">
+<strong>Created At: </strong>{{ customer_record.created_at }}</p>
+
+<p class="card-text">
+<strong>Id: </strong>{{ customer_record.id }}</p>
+    
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+		
+
+{% endblock %}
